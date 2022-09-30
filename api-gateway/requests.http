@@ -1,0 +1,17 @@
+### Add to cart
+POST http://localhost:3000/cart
+Content-Type: application/json
+
+{
+    "id": 1,
+    "count": 121
+}
+
+
+### Submit cart
+POST http://localhost:3000/cart/submit
+Content-Type: application/json
+
+{
+    
+}

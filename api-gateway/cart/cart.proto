@@ -1,0 +1,38 @@
+syntax = 'proto3';
+
+package cart;
+
+service CartService {
+    rpc ViewCart (ViewCartParam) returns (CartItems) {}
+    rpc AddToCart (ItemInfo) returns (SuccessResponse) {}
+    rpc MakeOrder (MakeOrderParam) returns (SuccessResponse) {}
+}
+
+message ViewCartParam {
+
+}
+
+message MakeOrderParam {
+
+}
+
+message CartItem {
+    string name = 1;
+    int32 count = 2;
+    string pricePerItem = 3;
+    string wholeBill = 4;
+}
+
+message CartItems {
+    repeated CartItem items = 1;
+}
+
+message ItemInfo {
+    int32 id = 1;
+    int32 count = 2;
+}
+
+message SuccessResponse {
+    bool success = 1;
+    string message = 2; 
+}

@@ -1,0 +1,25 @@
+syntax = 'proto3';
+
+package order;
+
+service OrderService {
+    rpc GetOrders (OrderParam) returns (OrdersResponse) {}
+}
+
+message OrderParam {}
+
+message OrdersResponse {
+    repeated Order orders = 1;
+}
+
+message Order {
+    repeated OrderItem items = 1;
+}
+
+
+message OrderItem {
+    string name = 1;
+    int32 count = 2;
+    string pricePerItem = 3;
+    string wholeBill = 4;
+}
