@@ -26,7 +26,6 @@ export class AppService {
                 console.log(`Waiting for messages in ${queue}...`);
                 channel.consume(queue, function (msg) {
                     self.ORDERS.orders.push(JSON.parse(msg.content.toString()));
-                    console.log(self.ORDERS.orders)
                 }, {
                     noAck: true
                 });
